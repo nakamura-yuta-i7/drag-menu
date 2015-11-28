@@ -1,0 +1,68 @@
+
+.folders {
+	$borderColor : #ccc ;
+	$borderPx : 5px ;
+	
+	border: $borderPx solid $borderColor; border-bottom: none;
+	padding: 0px; margin: 0px;
+	
+	.folder {
+		border-bottom:$borderPx solid $borderColor;
+		padding: 0px; margin: 0px;
+		list-style: none;
+		
+		a {
+			color: #fff;
+			display: block;
+			background: #60C27C;
+		}
+	}
+	.dragover {
+		a {
+			background-color:#FF1AD5;
+		}
+	}
+	.dragstart {
+		a {
+			background-color:RGBA(106, 203, 249, 1);
+		}
+	}
+}
+
+@mixin box_shadow($value: 0px 0px 10px #ccc) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+      -ms-box-shadow: $value;
+          box-shadow: $value;
+}
+
+.folder-dropend {
+	.menu-bg {
+		background: #fff; opacity: 0.5;
+		position: fixed;
+		top:0px; left:0px;
+		height: 100%; width: 100%;
+		z-index: 50;
+	}
+	.menu {
+		position: absolute;
+		z-index: 51;
+		background: #fff;
+		@include box_shadow;
+		
+		a {
+			cursor: pointer;
+			display: block;
+			&:hover {
+				background: #60C27C;
+				color: #fff;
+			}
+		}
+		.move {
+			
+		}
+		.copy {
+			
+		}
+	}
+}
