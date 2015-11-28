@@ -53,7 +53,7 @@ class Folders {
 		$doc.on("drop", ".folder", function(e) {
 			e.preventDefault();
 			console.log( "on drop.", {id_drag_start, id_drag_end, e, this: $(this) } );
-			if ( ! id_drag_end ) {
+			if ( ! id_drag_end || id_drag_start == id_drag_end ) {
 				Folders.removeDndClass()
 			} else {
 				let message = `フォルダ：${id_drag_start} を ${id_drag_end} に移動しますか？`
@@ -93,18 +93,42 @@ class Folder {
 }
 
 
-class FolderDropendMenu {
-	constructor(message) {
+class Menu {
+	constructor(params) {
+		let className = params.class
+		let items = params.items
+		let message = params.message
+		let itemsHtml = ""
+		items.forEach( item => {
+			itemsHtml += `<a class="${item.class}">${item.text}</a>`
+		})
 		this.$elem = $(`
-			<div class="folder-dropend">
+			<div class="${className}">
 				<div class="menu-bg"></div>
 				<div class="menu">
 					<div class="title">${message}</div>
-					<a class="copy">移動する</a>
-					<a class="move">コピーする</a>
+					${itemsHtml}
 				</div>
 			</div>
 		`)
+	}
+	get$Elem() {
+		return this.$elem
+	}
+}
+
+
+class FolderDropendMenu {
+	constructor(message) {
+		let menu = new Menu({
+			class: "folder-dropend",
+			message,
+			items: [
+				{ class: "copy", text: "コピーする" },
+				{ class: "move", text: "移動する" },
+			]
+		});
+		this.$elem = menu.get$Elem()
 		this.$menu = this.$elem.find(".menu")
 		this.$menuBg = this.$elem.find(".menu-bg")
 		this.setEvent()

@@ -12,5 +12,4 @@ global.appendStyle = css => {
 $(function() {
 	let folders = new Folders()
 	folders.render("body")
-	
 })

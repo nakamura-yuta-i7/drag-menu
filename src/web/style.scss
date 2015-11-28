@@ -29,7 +29,13 @@
 	}
 }
 
-@mixin box_shadow($value: 0px 0px 10px #ccc) {
+@mixin border-radius($radius: 3px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box_shadow($value: 0px 0px 15px #999) {
   -webkit-box-shadow: $value;
      -moz-box-shadow: $value;
       -ms-box-shadow: $value;
@@ -38,7 +44,7 @@
 
 .folder-dropend {
 	.menu-bg {
-		background: #fff; opacity: 0.5;
+		// background: #fff; opacity: 0.5;
 		position: fixed;
 		top:0px; left:0px;
 		height: 100%; width: 100%;
@@ -49,10 +55,16 @@
 		z-index: 51;
 		background: #fff;
 		@include box_shadow;
+		@include border-radius();
+		
+		.title {
+			padding: 10px 15px;
+		}
 		
 		a {
 			cursor: pointer;
 			display: block;
+			padding: 5px;
 			&:hover {
 				background: #60C27C;
 				color: #fff;
