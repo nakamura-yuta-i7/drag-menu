@@ -6,6 +6,7 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
 	entry: {
 		app: './src/web/app.js',
+		bootstrap_demo: './src/web/bootstrap_demo.js',
 	},
 	output: {
 		path: __dirname + "/public",

@@ -1,0 +1,18 @@
+doctype html
+html
+	head
+		title= title
+		// jquery
+		script(src="/jquery/dist/jquery.min.js")
+		// bootstrap
+		link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+		script(src="/bootstrap/dist/js/bootstrap.min.js")
+		script(src="/mousetrap/mousetrap.min.js")
+		// app
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/bootstrap_demo.css')
+		script(src="/javascripts/init.js")
+		script(src="/javascripts/bootstrap_demo.js")
+	body
+		h1= title
+		p Welcome to #{title}

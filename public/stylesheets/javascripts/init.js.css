@@ -1,0 +1,50 @@
+.folders {
+  border: 5px solid #ccc;
+  border-bottom: none;
+  padding: 0px;
+  margin: 0px; }
+  .folders .folder {
+    border-bottom: 5px solid #ccc;
+    padding: 0px;
+    margin: 0px;
+    list-style: none; }
+    .folders .folder a {
+      color: #fff;
+      display: block;
+      background: #60C27C; }
+  .folders .dragover a {
+    background-color: #FF1AD5; }
+  .folders .dragstart a {
+    background-color: RGBA(106, 203, 249, 1); }
+
+.folder-dropend .menu-bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 50; }
+
+.folder-dropend .menu {
+  position: absolute;
+  z-index: 51;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 15px #999;
+  -moz-box-shadow: 0px 0px 15px #999;
+  -ms-box-shadow: 0px 0px 15px #999;
+  box-shadow: 0px 0px 15px #999;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .folder-dropend .menu .title {
+    padding: 10px 15px; }
+  .folder-dropend .menu a {
+    cursor: pointer;
+    display: block;
+    padding: 5px; }
+    .folder-dropend .menu a:hover {
+      background: #60C27C;
+      color: #fff; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZXNoZWV0cy9qYXZhc2NyaXB0cy9pbml0LmpzLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/
